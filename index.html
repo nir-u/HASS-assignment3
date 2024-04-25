@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <title>Flat Type Charts</title>
+    <style>
+        body {
+            background-color: #f5dbf8;
+            /* Changed background color */
+        }
+
+        h1 {
+            margin: auto;
+            width: 750px;
+            text-align: center;
+            font-family: 'Noto Sans Mono';
+            font-weight: bold;
+
+            font-size: 30px;
+            line-height: 80px;
+            color: rgb(112, 41, 99);
+        }
+
+        h3 {
+            margin: auto;
+            width: 750px;
+            text-align: center;
+            font-family: 'Noto Sans Mono';
+            font-weight: regular;
+            font: size 12px;
+            color: rgb(61, 61, 60);
+        }
+
+        h2 {
+            margin: auto;
+            width: 750px;
+            text-align: center;
+            font-family: 'Noto Sans Mono';
+            font-weight: bold;
+            line-height: 12px;
+            color: rgb(61, 61, 60);
+        }
+
+        h4 {
+            margin: auto;
+            text-align: justify;
+            width: 750px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: rgb(112, 41, 99);
+        }
+
+        p {
+            margin: auto;
+            width: 750px;
+            text-align: justify;
+            text-align-last: left;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font: size 15px;
+        }
+
+
+        .container {
+            width: 600px;
+            margin: auto;
+            /* Center the container */
+            text-align: center;
+            /* Center the buttons */
+            margin-top: 20px;
+        }
+
+        .chart-container {
+            width: 900px;
+            height: 300px;
+            margin: auto;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .chart-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            margin-top: 30px;
+            /* Add 30px of space above the horizontal line */
+        }
+
+        button {
+            margin: 15px;
+            margin: auto;
+            text-align: justify;
+            text-align-last: left;
+            font-family: 'Noto Sans Mono';
+            font-size: 12px;
+            width: 180px;
+            /* Increase width by 8px on each side */
+            height: 30;
+            /* Increase height by 8px on each side */
+            border: none;
+            /* Add some space between buttons */
+        }
+
+        #container {
+            font-family: 'Noto Sans Mono';
+            font-weight: bold;
+            text-align: center;
+            padding: 0 40px;
+            max-width: 2400px;
+            margin: 0 auto;
+            margin-top: 20px;
+
+            font-size: 30px;
+            line-height: 90px;
+            color: rgb(112, 41, 99);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            <h1>Number of Resale Flats per Planning Area <br></h1>
+        </h1>
+        <h2>Assignment 3 | Submitted by Nirubhama Venkatachalam</h2>
+
+    </div>
+    <hr>
+
+    <p>
+        The visualisation represents the number of resale flats sold in each of the planning areas, categorised by flat
+        type. <em>This visualizaiton is based on the 2022-03 data from </em><a
+            href="https://data.gov.sg/dataset/resale-flat-prices" target="_blank">Resale Flat Prices - data.gov.sg</a>
+    </p><br>
+    <h3>Click field to View</h3>
+    <div class="container">
+        <button onclick="showChart1()">Show 1-Room Flat Chart</button>
+        <button onclick="showChart2()">Show 2-Room Flat Chart</button>
+        <button onclick="showChart3()">Show 3-Room Flat Chart</button>
+        <p></p><br>
+        <button onclick="showChart4()">Show 4-Room Flat Chart</button>
+        <button onclick="showChart5()">Show 5-Room Flat Chart</button>
+    </div>
+
+    <div id="chartContainer1" class="chart-container">
+        <h4 class="chart-title">1-Room Flat Chart</h4>
+        <div class="flourish-embed flourish-chart" data-src="visualisation/17711810"></div>
+    </div>
+    <div id="chartContainer2" class="chart-container">
+        <h4 class="chart-title">2-Room Flat Chart</h4>
+        <div class="flourish-embed flourish-chart" data-src="visualisation/17711632"></div>
+    </div>
+    <div id="chartContainer3" class="chart-container">
+        <h4 class="chart-title">3-Room Flat Chart</h4>
+        <div class="flourish-embed flourish-chart" data-src="visualisation/17711854"></div>
+    </div>
+    <div id="chartContainer4" class="chart-container">
+        <h4 class="chart-title">4-Room Flat Chart</h4>
+        <div class="flourish-embed flourish-chart" data-src="visualisation/17711863"></div>
+    </div>
+    <div id="chartContainer5" class="chart-container">
+        <h4 class="chart-title">5-Room Flat Chart</h4>
+        <div class="flourish-embed flourish-chart" data-src="visualisation/17711871"></div>
+    </div>
+
+    <script src="https://public.flourish.studio/resources/embed.js"></script>
+    <script>
+        function showChart1() {
+            var chartContainers = document.querySelectorAll('.chart-container');
+            chartContainers.forEach(function (container) {
+                container.style.display = 'none';
+            });
+            var chartContainer = document.getElementById('chartContainer1');
+            chartContainer.style.display = 'block';
+        }
+
+        function showChart2() {
+            var chartContainers = document.querySelectorAll('.chart-container');
+            chartContainers.forEach(function (container) {
+                container.style.display = 'none';
+            });
+            var chartContainer = document.getElementById('chartContainer2');
+            chartContainer.style.display = 'block';
+        }
+
+        function showChart3() {
+            var chartContainers = document.querySelectorAll('.chart-container');
+            chartContainers.forEach(function (container) {
+                container.style.display = 'none';
+            });
+            var chartContainer = document.getElementById('chartContainer3');
+            chartContainer.style.display = 'block';
+        }
+
+        function showChart4() {
+            var chartContainers = document.querySelectorAll('.chart-container');
+            chartContainers.forEach(function (container) {
+                container.style.display = 'none';
+            });
+            var chartContainer = document.getElementById('chartContainer4');
+            chartContainer.style.display = 'block';
+        }
+
+        function showChart5() {
+            var chartContainers = document.querySelectorAll('.chart-container');
+            chartContainers.forEach(function (container) {
+                container.style.display = 'none';
+            });
+            var chartContainer = document.getElementById('chartContainer5');
+            chartContainer.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
